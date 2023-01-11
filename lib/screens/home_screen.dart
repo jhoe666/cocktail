@@ -12,8 +12,9 @@ class HomeScreen extends StatelessWidget {
     final authservice = Provider.of<AuthService>(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Cocktails'),
+          title: Text('Cocktail'),
         ),
+        resizeToAvoidBottomInset: false, // set it to false
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -52,18 +53,16 @@ class HomeScreen extends StatelessWidget {
             Center(
               child: ElevatedButton(
                   child: Text('Buscar'),
-                  onPressed: () => {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Busqueda()))
-                      }),
+                  onPressed: () => {Navigator.pushNamed(context, '/busqueda')}),
             ),
-            //   Center(
-            //     child: ElevatedButton(
-            //         child: Text('Logout'),
-            //         onPressed: () async {
-            //           await authservice.singOut();
-            //         }),
-            //   )
+
+            Center(
+              child: ElevatedButton(
+                  child: Text('Logout'),
+                  onPressed: () async {
+                    await authservice.singOut();
+                  }),
+            )
           ],
         ));
   }

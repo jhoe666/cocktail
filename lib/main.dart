@@ -1,3 +1,4 @@
+import 'package:login/screens/busqueda_screen.dart';
 import 'package:login/screens/login_screen.dart';
 import 'package:login/screens/register_screen.dart';
 import 'package:login/services/auth_services.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
             '/': (context) => Wrapper(),
             '/login': (context) => LoginScreen(),
             '/register': (context) => RegisterScreen(),
+            '/busqueda': (context) => Busqueda(),
           },
         ));
   }
